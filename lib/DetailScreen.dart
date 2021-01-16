@@ -1,7 +1,6 @@
+import 'package:GTNM_CSKH/FakeCategory.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:GTNM_CSKH/FakeData.dart';
-import 'package:flutter/scheduler.dart';
 
 class DetailScreen extends StatefulWidget {
   @override
@@ -9,123 +8,155 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-  String _Search='';
-  final searchcontroller = TextEditingController();
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-  }
   @override
   Widget build(BuildContext context) {
+    var size=MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Detail Screen'),
-        backgroundColor: Colors.teal,
-        actions: <Widget>[
-          IconButton(icon: Icon(Icons.more_vert), onPressed: null)
-        ],
-      ),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: TextField(
-                controller: searchcontroller,
-                onChanged: (value) {
-                  this.setState(() {
-                    _Search = value;
-                  });
-                },
-
-                decoration: InputDecoration(
-                  hintText: "Search...",
-                  suffixIcon: IconButton(icon: Icon(Icons.search),onPressed: (){FocusScope.of(context).requestFocus(FocusNode());},),
-                  border: OutlineInputBorder(),
-                  // contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-                ),
-              ),
-            ),
-            Expanded(
-                child: ListView.builder(
-                  itemCount: fakeData.length,
-                  shrinkWrap: true,
-                  itemBuilder: (context, i) {
-                    if(fakeData[i].name.contains(_Search)==true || fakeData[i].email.contains(_Search)==true)
-                      {
-                        return new Column(
-                          children: <Widget>[
-                            ExpansionTile(
-                              leading: new CircleAvatar(
-                                foregroundColor:
-                                Colors.grey, //Theme.of(context).primaryColor,
-                                backgroundColor: Colors.grey,
-                              ),
-                              title: Text(
-                                fakeData[i].name,
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              subtitle: Text(
-                                fakeData[i].email,
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              children: <Widget>[
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 8.0, horizontal: 50.0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: <Widget>[
-                                      Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            'Ngày sinh :',
-                                            style: TextStyle(fontSize: 20),
-                                          ),
-                                          Text(
-                                            'Giới tính :',
-                                            style: TextStyle(fontSize: 20),
-                                          )
-                                        ],
+      body: SingleChildScrollView(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(minHeight: size.height),
+          child: Column(
+            children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Colors.teal, Colors.tealAccent],
+                )),
+                child: Container(
+                    width: double.infinity,
+                    height: 350.0,
+                    child: Center(
+                        child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        CircleAvatar(
+                          backgroundImage:
+                              NetworkImage('https://i.imgur.com/msQKgvv.jpeg'),
+                          radius: 50.0,
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        Text(
+                          "TONY STARK",
+                          style: TextStyle(
+                            fontSize: 25.0,
+                            color: Colors.white70,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        Text(
+                          "CATEGORY",
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.white70,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                        ConstrainedBox(
+                          constraints: BoxConstraints(maxHeight: 50.0),
+                          child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: Category.length,
+                              itemBuilder: (Context, index) {
+                                return Container(
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    color: Colors.white,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Container(
+                                        child: Center(
+                                            child: Text(
+                                          Category[index].toString(),
+                                          style: TextStyle(
+                                              color: Colors.teal,
+                                              fontSize: 24.0),
+                                        )),
                                       ),
-                                      Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            fakeData[i].DOB,
-                                            style: TextStyle(fontSize: 20),
-                                          ),
-                                          Text(
-                                            fakeData[i].gender,
-                                            style: TextStyle(fontSize: 20),
-                                          )
-                                        ],
-                                      )
-                                    ],
+                                    ),
                                   ),
-                                ),
-                              ],
-                            )
-                          ],
-                        );
-                      }
-                    else
-                      {
-                        return null;
-                      }
-                  },
+                                );
+                              }),
+                        ),
+                      ],
+                    ))),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  alignment: Alignment.topLeft,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text("D.O.B:",
+                          style: TextStyle(
+                              color: Colors.blueGrey, fontSize: 25.0)),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(
+                        "12/08/2016",
+                        style: TextStyle(fontSize: 25.0),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text("Address:",
+                          style: TextStyle(
+                              color: Colors.blueGrey, fontSize: 25.0)),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(
+                        "123 England, Street Noway",
+                        style: TextStyle(fontSize: 25.0),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text("Email:",
+                          style: TextStyle(
+                              color: Colors.blueGrey, fontSize: 25.0)),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(
+                        "TonyStark1247@gmail.com",
+                        style: TextStyle(fontSize: 25.0),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text("WorkPlace",
+                          style: TextStyle(
+                              color: Colors.blueGrey, fontSize: 25.0)),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(
+                        "RMIT",
+                        style: TextStyle(fontSize: 25.0),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-          ],
+            ],
+          ),
         ),
       ),
     );

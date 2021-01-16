@@ -1,4 +1,4 @@
-import 'package:GTNM_CSKH/DetailScreen.dart';
+import 'package:GTNM_CSKH/ListScreen.dart';
 import 'package:flutter/material.dart';
 import 'FakeData.dart';
 
@@ -96,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ? check=true:null;
                       }
                       check ? Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => DetailScreen()))
+                          builder: (context) => ListScreen()))
                           : showDialog(
                           context: context,
                           builder: (BuildContext context) {
