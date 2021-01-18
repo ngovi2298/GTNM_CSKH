@@ -1,3 +1,6 @@
+import 'package:GTNM_CSKH/AddScreen.dart';
+import 'package:GTNM_CSKH/DetailScreen.dart';
+import 'package:GTNM_CSKH/EditScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:GTNM_CSKH/FakeData.dart';
@@ -90,41 +93,51 @@ class _ListScreenState extends State<ListScreen> {
                                 style: TextStyle(fontSize: 20),
                               ),
                               children: <Widget>[
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 8.0, horizontal: 50.0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: <Widget>[
-                                      Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            'Ngày sinh :',
-                                            style: TextStyle(fontSize: 20),
-                                          ),
-                                          Text(
-                                            'Giới tính :',
-                                            style: TextStyle(fontSize: 20),
-                                          )
-                                        ],
-                                      ),
-                                      Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            fakeData[i].DOB,
-                                            style: TextStyle(fontSize: 20),
-                                          ),
-                                          Text(
-                                            fakeData[i].gender,
-                                            style: TextStyle(fontSize: 20),
-                                          )
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                ),
+                                 Row(
+                                   mainAxisAlignment: MainAxisAlignment.center,
+                                   children: <Widget>[
+                                     Padding(
+                                       padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 30.0),
+                                       child: IconButton(
+                                           icon: Icon(
+                                             Icons.info,
+                                             color: Colors.blue,
+                                             size: 40,
+                                           ),
+                                           onPressed: (){
+                                             Navigator.of(context).push(MaterialPageRoute(
+                                                 builder: (context) => DetailScreen()));
+                                           }),
+                                     ),
+                                     Padding(
+                                       padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 30.0),
+                                       child: IconButton(
+                                           icon: Icon(
+                                             Icons.edit,
+                                             color: Colors.black,
+                                             size: 40,
+                                           ),
+                                           onPressed: (){
+                                             Navigator.of(context).push(MaterialPageRoute(
+                                                 builder: (context) => EditScreen()));
+                                           }),
+                                     ),
+                                     Padding(
+                                       padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 30.0),
+                                       child: IconButton(
+                                           icon: Icon(
+                                             Icons.delete,
+                                             color: Colors.red,
+                                             size: 40,
+                                           ),
+                                           onPressed: (){
+                                             setState(() {
+                                               fakeData.removeAt(i);
+                                             });
+                                           }),
+                                     )
+                                   ],
+                                 )
                               ],
                             )
                           ],

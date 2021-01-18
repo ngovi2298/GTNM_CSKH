@@ -65,7 +65,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           constraints: BoxConstraints(maxHeight: 50.0),
                           child: ListView.builder(
                               scrollDirection: Axis.horizontal,
-                              itemCount: Category.length,
+                              itemCount: FakeCategory.length,
                               itemBuilder: (Context, index) {
                                 return Container(
                                   child: Card(
@@ -78,7 +78,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                       child: Container(
                                         child: Center(
                                             child: Text(
-                                          Category[index].toString(),
+                                          FakeCategory[index].toString(),
                                           style: TextStyle(
                                               color: Colors.teal,
                                               fontSize: 24.0),

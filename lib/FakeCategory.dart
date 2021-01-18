@@ -1,4 +1,4 @@
-List<String> Category=[
+List<String> FakeCategory=[
   "Student",
   "Ironman",
   "Rich",
