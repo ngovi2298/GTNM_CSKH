@@ -12,6 +12,10 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     var size=MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor:Colors.teal ,
+        elevation: 0,
+      ),
       body: SingleChildScrollView(
         child: ConstrainedBox(
           constraints: BoxConstraints(minHeight: size.height),

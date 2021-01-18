@@ -1,3 +1,4 @@
+import 'package:GTNM_CSKH/DetailScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:GTNM_CSKH/FakeData.dart';
@@ -22,6 +23,22 @@ class _ListScreenState extends State<ListScreen> {
     // TODO: implement dispose
     super.dispose();
   }
+
+  void handleClick(String value,BuildContext context)
+  {
+    switch(value)
+    {
+      case 'Add Customer':
+        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen()));
+        break;
+      case 'Email':
+        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen()));
+        break;
+      case 'Logout':
+        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen()));
+        break;
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,9 +48,9 @@ class _ListScreenState extends State<ListScreen> {
         backgroundColor: Colors.teal,
         actions: <Widget>[
            PopupMenuButton<String>(
-             onSelected: null,
+             onSelected: (choice)=>handleClick(choice, context),
              itemBuilder: (BuildContext context){
-               return {'Logout','Setting'}.map((String choice){
+               return {'Add Customer','Email','Logout'}.map((String choice){
                 return PopupMenuItem<String>(
                   value: choice,
                   child: Text(choice),
