@@ -1,8 +1,4 @@
-import 'package:GTNM_CSKH/FakeData.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:rxdart/rxdart.dart';
-import 'FakeCategory.dart';
 
 class EditScreen extends StatelessWidget {
   @override
@@ -30,11 +26,20 @@ class EditScreen extends StatelessWidget {
           children: <Widget>[
             Container(
               alignment: AlignmentDirectional.center,
-              padding: const EdgeInsets.symmetric(horizontal: 0.0,vertical: 20.0),
+              padding: const EdgeInsets.only(top: 20.0),
               child: CircleAvatar(
                 backgroundImage: NetworkImage('https://i.imgur.com/msQKgvv.jpeg'),
                 radius: 50.0,
               ),
+            ),
+            Container(
+                alignment: AlignmentDirectional.center,
+                padding: const EdgeInsets.only(bottom: 20.0),
+                child: IconButton(
+                    icon: Icon(
+                        Icons.camera_alt_outlined
+                    ), onPressed: null
+                )
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -63,7 +68,6 @@ class EditScreen extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 0.0),
                 child: TextField(
-                  obscureText: true,
                   style: TextStyle(fontSize: 20),
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -80,7 +84,6 @@ class EditScreen extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 0.0),
                 child: TextField(
-                  obscureText: true,
                   style: TextStyle(fontSize: 20),
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -97,7 +100,6 @@ class EditScreen extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 0.0),
                 child: TextField(
-                  obscureText: true,
                   style: TextStyle(fontSize: 20),
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),

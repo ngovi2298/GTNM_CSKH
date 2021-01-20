@@ -69,6 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     //  form.validate();
                   });
                 },
+                obscureText: true,
                 controller: passwordcontroller,
                 decoration: const InputDecoration(
                   icon: Icon(Icons.vpn_key),

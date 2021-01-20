@@ -1,10 +1,8 @@
-import 'package:GTNM_CSKH/AddScreen.dart';
 import 'package:GTNM_CSKH/DetailScreen.dart';
 import 'package:GTNM_CSKH/EditScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:GTNM_CSKH/FakeData.dart';
-import 'package:flutter/scheduler.dart';
 
 class ListScreen extends StatefulWidget {
   @override
