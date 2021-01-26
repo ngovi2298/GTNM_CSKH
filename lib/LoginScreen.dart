@@ -95,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         _Username == fakeData[i].email
                             ? check=true:null;
                       }
-                      check ? Navigator.of(context).push(MaterialPageRoute(
+                      check ? Navigator.of(context).pushReplacement(MaterialPageRoute(
                           builder: (context) => ListScreen()))
                           : showDialog(
                           context: context,

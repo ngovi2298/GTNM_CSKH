@@ -1,3 +1,6 @@
+import 'package:GTNM_CSKH/DetailScreen.dart';
+import 'package:GTNM_CSKH/ListEmailScreen.dart';
+import 'package:GTNM_CSKH/LoginScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:GTNM_CSKH/FakeData.dart';
@@ -22,18 +25,32 @@ class _ListScreenState extends State<ListScreen> {
     // TODO: implement dispose
     super.dispose();
   }
+
+  void handleClick(String value,BuildContext context)
+  {
+    switch(value)
+    {
+      case 'Email':
+        Navigator.push(context, MaterialPageRoute(builder: (context) => ListEmailScreen()));
+        break;
+      case 'Logout':
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
+        appBar: AppBar(
+          centerTitle: true,
         title: Text('Home Screen'),
         backgroundColor: Colors.teal,
         actions: <Widget>[
            PopupMenuButton<String>(
-             onSelected: null,
+             onSelected: (choice)=>handleClick(choice, context),
              itemBuilder: (BuildContext context){
-               return {'Logout','Setting'}.map((String choice){
+               return {'Email','Logout'}.map((String choice){
                 return PopupMenuItem<String>(
                   value: choice,
                   child: Text(choice),
@@ -69,63 +86,35 @@ class _ListScreenState extends State<ListScreen> {
             Expanded(
                 child: ListView.builder(
                   itemCount: fakeData.length,
-                  shrinkWrap: true,
                   itemBuilder: (context, i) {
                     if(fakeData[i].name.contains(_Search)==true || fakeData[i].email.contains(_Search)==true)
                       {
                         return new Column(
                           children: <Widget>[
-                            ExpansionTile(
+                            ListTile(
                               leading: new CircleAvatar(
-                                foregroundColor:
-                                Colors.grey, //Theme.of(context).primaryColor,
+                                foregroundColor: Colors.grey, //Theme.of(context).primaryColor,
                                 backgroundColor: Colors.grey,
+                                backgroundImage: NetworkImage(fakeData[i].avatarUrl),
                               ),
-                              title: Text(
-                                fakeData[i].name,
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              subtitle: Text(
-                                fakeData[i].email,
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              children: <Widget>[
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 8.0, horizontal: 50.0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: <Widget>[
-                                      Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            'Ngày sinh :',
-                                            style: TextStyle(fontSize: 20),
-                                          ),
-                                          Text(
-                                            'Giới tính :',
-                                            style: TextStyle(fontSize: 20),
-                                          )
-                                        ],
-                                      ),
-                                      Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            fakeData[i].DOB,
-                                            style: TextStyle(fontSize: 20),
-                                          ),
-                                          Text(
-                                            fakeData[i].gender,
-                                            style: TextStyle(fontSize: 20),
-                                          )
-                                        ],
-                                      )
-                                    ],
-                                  ),
+                              title: Transform(
+                                transform: Matrix4.translationValues(20, 0.0, 0.0),
+                                child: Text(
+                                  fakeData[i].name,
+                                  style: TextStyle(fontSize: 20),
                                 ),
-                              ],
+                              ),
+                              subtitle: Transform(
+                                transform: Matrix4.translationValues(20, 0.0, 0.0),
+                                child: Text(
+                                  fakeData[i].email,
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                              ),
+                              onTap:(){
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => DetailScreen(fakeData[i])));
+                              },
                             )
                           ],
                         );

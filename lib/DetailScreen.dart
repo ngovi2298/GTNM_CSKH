@@ -1,8 +1,11 @@
 import 'package:GTNM_CSKH/FakeCategory.dart';
+import 'package:GTNM_CSKH/FakeData.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatefulWidget {
+  final ChatModel _chatModel;
+  DetailScreen(this._chatModel);
   @override
   _DetailScreenState createState() => _DetailScreenState();
 }
@@ -12,6 +15,10 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     var size=MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor:Colors.teal ,
+        elevation: 0,
+      ),
       body: SingleChildScrollView(
         child: ConstrainedBox(
           constraints: BoxConstraints(minHeight: size.height),
@@ -35,14 +42,14 @@ class _DetailScreenState extends State<DetailScreen> {
                       children: <Widget>[
                         CircleAvatar(
                           backgroundImage:
-                              NetworkImage('https://i.imgur.com/msQKgvv.jpeg'),
+                              NetworkImage(widget._chatModel.avatarUrl),
                           radius: 50.0,
                         ),
                         SizedBox(
                           height: 10.0,
                         ),
                         Text(
-                          "TONY STARK",
+                          widget._chatModel.name,
                           style: TextStyle(
                             fontSize: 25.0,
                             color: Colors.white70,
@@ -106,7 +113,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         height: 10.0,
                       ),
                       Text(
-                        "12/08/2016",
+                        widget._chatModel.DOB,
                         style: TextStyle(fontSize: 25.0),
                       ),
                       SizedBox(
@@ -132,7 +139,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         height: 10.0,
                       ),
                       Text(
-                        "TonyStark1247@gmail.com",
+                        widget._chatModel.email,
                         style: TextStyle(fontSize: 25.0),
                       ),
                       SizedBox(

@@ -33,7 +33,54 @@ List<ChatModel> fakeData = [
     avatarUrl:
     "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
   ),
-
+  new ChatModel(
+    name: "JayBack",
+    email: "ngovi.2298@gmail.com",
+    DOB: "19/9/1998",
+    gender: "female",
+    avatarUrl:
+    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+  ),
+  new ChatModel(
+    name: "OhSad",
+    email: "ClientEmail@Email.com",
+    DOB: "19/9/1998",
+    gender: "female",
+    avatarUrl:
+    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+  ),
+  new ChatModel(
+    name: "JayBack",
+    email: "ngovi.2298@gmail.com",
+    DOB: "19/9/1998",
+    gender: "female",
+    avatarUrl:
+    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+  ),
+  new ChatModel(
+    name: "OhSad",
+    email: "ClientEmail@Email.com",
+    DOB: "19/9/1998",
+    gender: "female",
+    avatarUrl:
+    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+  ),
+  new ChatModel(
+    name: "JayBack",
+    email: "ngovi.2298@gmail.com",
+    DOB: "19/9/1998",
+    gender: "female",
+    avatarUrl:
+    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+  ),
+  new ChatModel(
+    name: "OhSad",
+    email: "ClientEmail@Email.com",
+    DOB: "19/9/1998",
+    gender: "female",
+    avatarUrl:
+    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+  ),
 ];
 
 List<ChatModel> Category1 = [
