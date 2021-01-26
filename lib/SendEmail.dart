@@ -14,7 +14,12 @@ class SendEmail extends StatefulWidget {
 }
 
 class _SendEmailState extends State<SendEmail> {
-  List<String> _dynamicChips = new List<String>.from(Category1);
+  List<String> _dynamicChips = [
+    "Robert Downey Jr.",
+    "Dwayne Johnson",
+    "Elizabeth Olsen",
+    "Henry Cavill",
+  ];
   String _Search = '';
   final searchcontroller = TextEditingController();
   var height = AppBar().preferredSize.height;
@@ -104,7 +109,7 @@ class _SendEmailState extends State<SendEmail> {
             Text(
               "Reciver",
               style: TextStyle(
-                fontSize: 10,
+                fontSize: 20,
                 color: Colors.grey,
               ),
             ),

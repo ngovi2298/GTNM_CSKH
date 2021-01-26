@@ -8,32 +8,6 @@ import 'FakeData.dart';
 class DataSearch extends SearchDelegate<String> {
   ChatModel selectedItem;
 
-  final List<ChatModel> recentModel = [
-    new ChatModel(
-      name: "AClient",
-      email: "ClientEmail@Email.com",
-      DOB: "19/9/1998",
-      gender: "female",
-      avatarUrl:
-          "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
-    ),
-    new ChatModel(
-      name: "BClient",
-      email: "ngovi.2298@gmail.com",
-      DOB: "19/9/1998",
-      gender: "female",
-      avatarUrl:
-          "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
-    ),
-    new ChatModel(
-      name: "VClient",
-      email: "ClientEmail@Email.com",
-      DOB: "19/9/1998",
-      gender: "female",
-      avatarUrl:
-          "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
-    ),
-  ];
   final String emailName;
   DataSearch(this.emailName);
 
