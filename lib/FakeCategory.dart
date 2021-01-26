@@ -1,13 +1,10 @@
-List<String> Category=[
+List<String> Category1=[
   "Student",
-  "Ironman",
+  "Man",
   "Rich",
-  "Playboy",
-  "Student",
-  "Ironman",
-  "Rich",
-  "Playboy",
-  "Ironman",
-  "Rich",
-  "Playboy"
+  "SuperStar",
+  "United States",
+  "Gamer",
+  "MSI fanboy",
+  "Rock music",
 ];

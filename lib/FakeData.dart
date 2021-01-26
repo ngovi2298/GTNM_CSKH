@@ -10,104 +10,77 @@ class ChatModel {
 
 List<ChatModel> fakeData = [
   new ChatModel(
-    name: "AClient",
+    name: "Robert Downey Jr.",
     email: "ClientEmail@Email.com",
-    DOB: "19/9/1998",
-    gender: "female",
+    DOB: "04/04/1965",
+    gender: "male",
     avatarUrl:
-        "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+        "https://static.toiimg.com/photo/msid-75805310/75805310.jpg?135092",
   ),
   new ChatModel(
-    name: "BClient",
+    name: "Dwayne Johnson",
     email: "ngovi.2298@gmail.com",
-    DOB: "19/9/1998",
-    gender: "female",
+    DOB: "02/05/1972",
+    gender: "male",
     avatarUrl:
-    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+    "https://sportshub.cbsistatic.com/i/r/2018/03/28/25ceeedc-0642-4098-9b6f-01488ccf53c8/thumbnail/1200x675/26bfae6344883e737925575b52895326/usatsi-10492226-1.jpg",
   ),
   new ChatModel(
-    name: "VClient",
+    name: "Elizabeth Olsen",
     email: "ClientEmail@Email.com",
-    DOB: "19/9/1998",
+    DOB: "16/02/1989",
     gender: "female",
     avatarUrl:
-    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+    "https://znews-photo.zadn.vn/w660/Uploaded/oqivovbt/2019_05_08/elizabeth_olsen_6.jpg",
   ),
   new ChatModel(
-    name: "JayBack",
+    name: "Henry Cavill",
     email: "ngovi.2298@gmail.com",
-    DOB: "19/9/1998",
-    gender: "female",
+    DOB: "05/05/1983",
+    gender: "male",
     avatarUrl:
-    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+    "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/british-actor-henry-cavill-poses-on-the-red-carpet-as-he-news-photo-1581433962.jpg",
   ),
   new ChatModel(
-    name: "OhSad",
+    name: "Anya Taylor-Joy",
     email: "ClientEmail@Email.com",
-    DOB: "19/9/1998",
+    DOB: "16/04/1996",
     gender: "female",
     avatarUrl:
-    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+    "https://image2.tin247.com/pictures/2021/01/12/ihw1610424731.jpg",
   ),
   new ChatModel(
-    name: "JayBack",
+    name: "Heath Ledger",
     email: "ngovi.2298@gmail.com",
-    DOB: "19/9/1998",
-    gender: "female",
+    DOB: "04/04/1979",
+    gender: "male",
     avatarUrl:
-    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+    "https://imagesmtv-a.akamaihd.net/uri/mgid:ao:image:mtv.com:231147?quality=0.8&format=jpg&width=1440&height=810&.jpg",
   ),
   new ChatModel(
-    name: "OhSad",
+    name: "Keanu Reeves",
     email: "ClientEmail@Email.com",
-    DOB: "19/9/1998",
-    gender: "female",
+    DOB: "02/09/1964",
+    gender: "male",
     avatarUrl:
-    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+    "https://upload.wikimedia.org/wikipedia/commons/f/f2/Keanu_Reeves_2013_%2810615146086%29_%28cropped%29.jpg",
   ),
   new ChatModel(
-    name: "JayBack",
+    name: "Brad Pitt",
     email: "ngovi.2298@gmail.com",
-    DOB: "19/9/1998",
-    gender: "female",
+    DOB: "18/12/1963",
+    gender: "male",
     avatarUrl:
-    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+    "https://www.refinery29.com/images/9381032.jpg",
   ),
   new ChatModel(
-    name: "OhSad",
+    name: "Saoirse Ronan",
     email: "ClientEmail@Email.com",
-    DOB: "19/9/1998",
+    DOB: "12/04/1994",
     gender: "female",
     avatarUrl:
-    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+    "https://img2.thelist.com/img/gallery/the-untold-truth-of-saoirse-ronan/saoirse-ronan-auditioned-for-this-fan-favorite-harry-potter-character-1576868646.jpg",
   ),
 ];
 
-List<ChatModel> Category1 = [
-  new ChatModel(
-    name: "Alien",
-    email: "ClientEmail@Email.com",
-    DOB: "19/9/1998",
-    gender: "female",
-    avatarUrl:
-    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
-  ),
-  new ChatModel(
-    name: "JayBack",
-    email: "ngovi.2298@gmail.com",
-    DOB: "19/9/1998",
-    gender: "female",
-    avatarUrl:
-    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
-  ),
-  new ChatModel(
-    name: "OhSad",
-    email: "ClientEmail@Email.com",
-    DOB: "19/9/1998",
-    gender: "female",
-    avatarUrl:
-    "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
-  ),
-
-];
 

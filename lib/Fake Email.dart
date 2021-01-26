@@ -35,7 +35,7 @@ List<Email> MyEmail=[
       dateCreate: "10/1/2019"
   ),
   new Email(
-      emailName: "Template9",
+      emailName: "Template9+",
       dateCreate: "10/1/2019"
   ),
   new Email(

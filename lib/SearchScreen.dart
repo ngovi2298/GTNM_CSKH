@@ -1,3 +1,4 @@
+import 'package:GTNM_CSKH/FakeCategory.dart';
 import 'package:GTNM_CSKH/SendEmail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -39,8 +40,8 @@ class DataSearch extends SearchDelegate<String> {
   @override
   Widget buildSuggestions(BuildContext context) {
     final List<ChatModel> suggesttionList = query.isEmpty
-        ? recentModel
-        : recentModel
+        ? fakeData
+        : fakeData
             .where(
                 (item) => item.name.toLowerCase().contains(query.toLowerCase()))
             .toList();
