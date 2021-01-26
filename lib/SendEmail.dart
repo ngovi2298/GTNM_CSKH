@@ -43,6 +43,8 @@ class _SendEmailState extends State<SendEmail> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                  showCursor: true,
+                  readOnly: true,
                   decoration: InputDecoration(
                     hintText: "search...",
                     suffixIcon: Icon(Icons.search),
